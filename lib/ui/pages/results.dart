@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class RenewalChecklistPage extends StatefulWidget {
+class Result extends StatefulWidget {
   @override
-  RenewalChecklistPageState createState() => RenewalChecklistPageState();
+  _ResultState createState() => _ResultState();
 }
 
-class RenewalChecklistPageState extends State<RenewalChecklistPage> {
+class _ResultState extends State<Result> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('CHECKLIST FOR VISA RENEWAL'),
+          title: Text('EXAMINATION RESULT'),
           backgroundColor: Colors.black,
           elevation: 0.0,
         ),
@@ -23,7 +23,7 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Image.asset(
-                'assets/images/checklist.jpeg',
+                'assets/images/result.jpeg',
                 height: 280,
                 width: 200,
               ),
@@ -34,6 +34,7 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
               Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     RichText(
                       text: TextSpan(
@@ -42,10 +43,10 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
                         children: <TextSpan>[
                           TextSpan(
                               text:
-                                  'In order to acquire this document please visit this link ',
+                                  'In order to acquire this document please go to ESMP',
                               style: GoogleFonts.ptSansNarrow(
                                   textStyle: TextStyle(
-                                fontSize: 18,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
                               ))),
                         ],
@@ -57,10 +58,10 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
                         style: TextStyle(color: Colors.blue[700], fontSize: 14),
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Download the pdf file  ',
+                              text: 'Then My Register -> Examination Result',
                               style: GoogleFonts.ptSansNarrow(
                                   textStyle: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600))),
                         ],
                       ),
@@ -71,10 +72,11 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
                         style: TextStyle(color: Colors.blue[700], fontSize: 14),
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Print 1 copy of this page   ',
+                              text:
+                                  'Before Printing send to Academic Advisor(PA) or Head of Department',
                               style: GoogleFonts.ptSansNarrow(
                                   textStyle: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600))),
                         ],
                       ),
@@ -85,10 +87,11 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
                         style: TextStyle(color: Colors.blue[700], fontSize: 14),
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Follow the instructions on this page ',
+                              text:
+                                  'After it is Stamped Print 2 copies of this slip',
                               style: GoogleFonts.ptSansNarrow(
                                   textStyle: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600))),
                         ],
                       ),
@@ -103,7 +106,7 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
                                   'Include this page when submitting your documents for visa renewal ',
                               style: GoogleFonts.ptSansNarrow(
                                   textStyle: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600))),
                         ],
                       ),
@@ -123,7 +126,7 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
                       onPressed: () {
                         launchURL();
                       },
-                      child: Text('Follow Link',
+                      child: Text('ESMP',
                           style: TextStyle(
                             fontSize: 15.0,
                             color: Colors.white,
@@ -142,7 +145,7 @@ class RenewalChecklistPageState extends State<RenewalChecklistPage> {
 
 launchURL() async {
   const url =
-      'https://intl.upm.edu.my/upload/dokumen/20200316095744CHECKLIST_STUDENT_RENEWAL_.pdf';
+      'https://smp.upm.edu.my/smp/action/security/loginSmpSetup?TX=2137351145801114';
   if (await canLaunch(url)) {
     await launch(url);
   } else {

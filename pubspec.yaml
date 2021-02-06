@@ -18,6 +18,11 @@ dependencies:
   cloud_firestore: '^0.14.0+2'
   percent_indicator: '^2.1.7+2'
   local_auth: ^0.6.3+4
+  google_maps_flutter: ^0.5.24+1
+  location: ^2.5.0
+  google_fonts: ^1.1.2
+  url_launcher: ^5.7.10
+
   
 
   # google_sign_in:
@@ -39,7 +44,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/checklist.jpeg
-    - assets/images/Visapass.png
-    - assets/images/default.png
-    - assets/images/defaultDark.png
+    - assets/images/

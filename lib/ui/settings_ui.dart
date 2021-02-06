@@ -36,7 +36,7 @@ class SettingsUI extends StatelessWidget {
         ListTile(
             title: Text(labels.settings.updateProfile),
             trailing: RaisedButton(
-              color: Colors.red,
+              color: Colors.red[900],
               onPressed: () async {
                 Get.to(HomeScreen());
               },
@@ -47,7 +47,7 @@ class SettingsUI extends StatelessWidget {
         ListTile(
           title: Text(labels.settings.signOut),
           trailing: RaisedButton(
-            color: Colors.red,
+            color: Colors.red[900],
             onPressed: () {
               AuthController.to.signOut();
             },

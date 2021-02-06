@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/maps/map_permission.dart';
+import 'package:flutter_starter/ui/pages/Photo_passport.dart';
+import 'package:flutter_starter/ui/pages/attendance.dart';
+import 'package:flutter_starter/ui/pages/health.dart';
+import 'package:flutter_starter/ui/pages/papers_done.dart';
+import 'package:flutter_starter/ui/pages/reciept.dart';
+import 'package:flutter_starter/ui/pages/registration.dart';
 import 'package:flutter_starter/ui/pages/renewelchecklist.dart';
+import 'package:flutter_starter/ui/pages/results.dart';
 import 'package:flutter_starter/ui/pages/visapass.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+
+import '../localizations.dart';
 
 class Document extends StatefulWidget {
   @override
@@ -11,9 +20,10 @@ class Document extends StatefulWidget {
 class DocumentState extends State<Document> {
   @override
   Widget build(BuildContext context) {
+    final labels = AppLocalizations.of(context);
     return Scaffold(
         appBar: AppBar(
-          title: Text('Dashboard'),
+          title: Text(labels.dashboard.title),
           backgroundColor: Colors.black,
           elevation: 0.0,
         ),
@@ -21,29 +31,12 @@ class DocumentState extends State<Document> {
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
-              new CircularPercentIndicator(
-                radius: 120.0,
-                lineWidth: 13.0,
-                animation: true,
-                percent: 0.7,
-                center: new Text(
-                  "70.0%",
-                  style: new TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-                footer: new Text(
-                  "Successfully collected Document",
-                  style: new TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 17.0),
-                ),
-              ),
               Container(
                 margin: EdgeInsets.all(24),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                          'Welcome to putra visa where you can track and manage all your visa related documents',
+                      Text(labels.dashboard.welcome,
                           style: TextStyle(
                               fontSize: 15.0,
                               color: Colors.black.withOpacity(1.0),
@@ -58,9 +51,32 @@ class DocumentState extends State<Document> {
                     RaisedButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14.0),
-                          side: BorderSide(color: Colors.red)),
-                      onPressed: () {},
-                      child: Text('UPM MAP',
+                          side: BorderSide(color: Colors.red[900])),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyApp2()),
+                        );
+                      },
+                      child: Text(labels.dashboard.map,
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.white,
+                          )),
+                      color: Colors.red[900],
+                      elevation: 5,
+                    ),
+                    RaisedButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14.0),
+                          side: BorderSide(color: Colors.red[900])),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Home()),
+                        );
+                      },
+                      child: Text('Track your progress',
                           style: TextStyle(
                             fontSize: 15.0,
                             color: Colors.white,
@@ -88,7 +104,7 @@ class DocumentState extends State<Document> {
                 ),
               ),
               ListTile(
-                title: Text('Checklist for student renewal application'),
+                title: Text('Checklist for student Renewal Application'),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -107,12 +123,57 @@ class DocumentState extends State<Document> {
                 },
               ),
               ListTile(
-                title: Text('registration Slip'),
+                title: Text('Course Registration Slip'),
                 onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Registration()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Examination Result'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Result()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Attendance Report'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Attendance()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Insurance Cover Note'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Health()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Photo and Passport Guidelines'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Photo()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Reciept'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Reciept()),
+                  );
                 },
               ),
             ],

@@ -15,8 +15,9 @@ class Globals {
     MenuOptionsModel(key: "es", value: "Español"), //Spanish
     MenuOptionsModel(key: "fr", value: "Français"), //French
     MenuOptionsModel(key: "hi", value: "हिन्दी"), //Hindi
-    MenuOptionsModel(key: "ja", value: "日本語"), //Japanese
-    MenuOptionsModel(key: "pt", value: "Português"), //Portuguese
-    MenuOptionsModel(key: "ru", value: "русский"), //Russian
+    MenuOptionsModel(key: "bn", value: "Bengali"), //Bengali
+    MenuOptionsModel(key: "ar", value: "Arabic"), //Arabic
+    MenuOptionsModel(key: "ur", value: "Urdu"), //Urdu
+    MenuOptionsModel(key: "in", value: "Indonesian"), //Indonesian
   ];
 }

@@ -9,7 +9,7 @@ part 'localizations.g.dart';
 //on command line run...
 //flutter packages pub run build_runner build
 
-@SheetLocalization("1oS7iJ6ocrZBA53SxRfKF0CG9HAaXeKtzvsTBhgG4Zzk",
+@SheetLocalization("1uLtdH66g6wjwDejeBsN2hj-qCxiaa1e5Eit6fcfIZus",
     "0") // <- See 1. to get DOCID and SHEETID
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const AppLocalizationsDelegate();
